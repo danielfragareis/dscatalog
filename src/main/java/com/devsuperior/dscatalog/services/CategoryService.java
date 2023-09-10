@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.repositories.CategoryRepository;
 
+
 @Service	
 //Podem ser usadas outras anotations a depender do objetivo, como: @Component e @Repository
 public class CategoryService {
@@ -20,7 +21,7 @@ public class CategoryService {
 	 * um bean (objeto gerenciado pelo Spring) adequado durante a inicialização da
 	 * aplicação.
 	 */
-	@Autowired
+	@org.springframework.transaction.annotation.Transactional(readOnly=true)
 	
 	public List<Category> findAll(){
 		return repository.findAll();
